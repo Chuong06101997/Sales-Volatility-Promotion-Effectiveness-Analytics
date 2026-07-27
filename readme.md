@@ -54,7 +54,9 @@ report/                                      -> executive summary, full report, 
 ```
 ## Dataset
 
-Due to GitHub's file size limit, the full dataset is hosted on Google Drive.
+The complete dataset (**152,460 daily transactions**) is available via Google Drive.
+
+GitHub's file size limit prevents the full Excel file from being stored directly in this repository.
 
 📁 Full Dataset:
 https://drive.google.com/file/d/1R7R_FUS5ylvMjr03TPsLGDdvBhM9-0-i/view?usp=sharing
