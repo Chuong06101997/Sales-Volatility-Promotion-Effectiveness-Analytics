@@ -52,6 +52,12 @@ notebooks/04_forecasting_benchmark.ipynb     -> what does a simple baseline achi
 notebooks/05_business_recommendations.ipynb  -> what should happen next?
 report/                                      -> executive summary, full report, decision log
 ```
+## Dataset
+
+Due to GitHub's file size limit, the full dataset is hosted on Google Drive.
+
+📁 Full Dataset:
+https://drive.google.com/file/d/1R7R_FUS5ylvMjr03TPsLGDdvBhM9-0-i/view?usp=sharing
 
 Each notebook runs end to end against the underlying dataset -- nothing in this repository is a static write-up of numbers that can't be reproduced.
 
