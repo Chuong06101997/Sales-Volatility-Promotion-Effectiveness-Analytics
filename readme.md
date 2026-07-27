@@ -13,7 +13,7 @@ This repository is the analysis that answered it — and the recommendations tha
 - **Headline result:** Promotions lift sales by **47% on average** versus a seasonality-adjusted baseline — with no sales dip in the 3 days after a promotion ends.
 - **Forecasting benchmark:** A transparent, non-ML baseline reproduces actual sales within **28.34% WAPE** — before any advanced modeling is considered.
 - **What changed as a result:** 3 targeted pilots — not a platform purchase, not a headcount request, not a 6-month roadmap.
-- **What this analysis refused to claim:** ROI, causal promotion effects, and any conclusion beyond these two specific stores. Stated up front, not buried in a limitations section.
+- **What this analysis refused to claim: ROI, causal promotion effects, and any conclusion beyond these two specific stores — see "Limitations" below for why.
 
 **Read next:** [Executive Summary](report/executive_summary.md) - [Full Report](report/full_report_v1.0.docx) - [Notebook 01 - Data Audit](notebooks/01_data_audit.ipynb)
 
@@ -69,11 +69,11 @@ All analyses and reported results in this repository are reproducible using the 
 Business Problem -> Data Audit -> Exploration -> Hypothesis Testing -> Forecast Benchmark -> Recommendations
 ```
 
-Five stages, five notebooks, in that order. Nothing was recommended before it was tested; nothing was tested before the data was audited.
+Five stages, five notebooks, run in that order — each stage only uses what the previous one confirmed.
 
 ---
 
-## Why These Numbers Can Be Trusted
+## Methodology & Governance
 
 Three things sit behind every claim above, kept in the `report/` folder:
 
@@ -81,7 +81,7 @@ Three things sit behind every claim above, kept in the `report/` folder:
 - **Assumption Register** -- every assumption named, along with what breaks if it's wrong.
 - **Evidence Levels** -- every finding rated Strong, Moderate, Weak, Not Supported, or Insufficient Data, so nothing is oversold.
 
-The two-store limitation is a good example of this discipline: store, country, city, and channel are structurally tied together in this dataset, so every store-level result is scoped to *these two stores* -- not generalized to "supermarkets" or "Italy" -- and the README says so instead of letting a reader assume otherwise.
+The two-store limitation is a good example: store, country, city, and channel are structurally tied together in this dataset, so every store-level result is scoped to these two stores, not "supermarkets" or "Italy" in general.
 
 ## Limitations, Stated Plainly
 
@@ -94,7 +94,7 @@ The two-store limitation is a good example of this discipline: store, country, c
 
 Python (pandas, NumPy, SciPy, Matplotlib) inside Jupyter Notebooks. Standard statistical testing -- no framework did the thinking.
 
-## Skills This Project Actually Required
+## What This Project Required
 
 - Catching that two "independent" stores were actually the same confounded variable, before it corrupted every downstream comparison.
 - Choosing a non-parametric test because the sales data refused to be normal, and saying so.
