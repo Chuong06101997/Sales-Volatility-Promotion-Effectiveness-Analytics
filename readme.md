@@ -31,6 +31,8 @@ This repository is the analysis that answered it — and the recommendations tha
 | Are weekends/seasons real sales drivers? | Yes -- weekends add **+$79.60**/day, summer/holiday months add **+$29-38**/day | OLS regression, controlling for promotions |
 | Does weather matter? | No measurable effect, tested three separate ways | Confirmed null result |
 
+<img width="1266" height="152" alt="image" src="https://github.com/user-attachments/assets/c0fedd5c-0862-4625-b0ac-b0a2bfdb8bce" />
+
 ## Business Recommendations
 
 | Action | Confidence | What Happens Next |
