@@ -18,6 +18,7 @@ This repository is the analysis that answered it — and the recommendations tha
 **Read next:** [Executive Summary](report/executive_summary.md) - [Full Report](report/full_report_v1.0.docx) - [Notebook 01 - Data Audit](notebooks/01_data_audit.ipynb)
 
 ---
+<img width="972" height="707" alt="image" src="https://github.com/user-attachments/assets/43fcebd9-8878-43af-ae3e-121a7eb9bfff" />
 
 ## Key Results
 
