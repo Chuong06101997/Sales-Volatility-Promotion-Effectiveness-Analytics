@@ -11,7 +11,7 @@ This repository is the analysis that answered it — and the recommendations tha
 - **Problem:** Recurring stock-outs during peak demand, excess inventory during slow periods, planning done mostly on judgement.
 - **Approach:** Audit the data, test the patterns everyone assumed were true, build a simple forecasting benchmark, recommend only what the evidence supports.
 - **Headline result:** Promotions lift sales by **47% on average** versus a seasonality-adjusted baseline — with no sales dip in the 3 days after a promotion ends.
-- **Forecasting benchmark:** A transparent, non-ML baseline reproduces actual sales within **28.34% WAPE** — before any advanced modeling is considered.
+- **Forecasting benchmark:** A transparent, non-ML baseline reproduces actual sales within **28.63% WAPE** — before any advanced modeling is considered.
 - **What changed as a result:** 3 targeted pilots — not a platform purchase, not a headcount request, not a 6-month roadmap.
 - **What this analysis refused to claim:**  ROI, causal promotion effects, and any conclusion beyond these two specific stores — see "Limitations" below for why.
 
@@ -27,7 +27,7 @@ This repository is the analysis that answered it — and the recommendations tha
 | Do promotions actually lift sales? | **+47.43%** average lift vs. seasonality-adjusted baseline (n = 12,702 promo-days) | Wilcoxon signed-rank, p < 0.001 |
 | Do promotions just borrow from future sales? | No detectable dip in the 3 days after a promotion ends | Mean post-promo difference: +0.25%, not significant |
 | Does store location explain the volatility? | Barely. Variance nearly identical between stores (0.989 vs. 0.982) | Brown-Forsythe test |
-| Is a simple forecast good enough to start with? | 28.34% WAPE, no machine learning used | Seasonal Historical Average benchmark |
+| Is a simple forecast good enough to start with? | 28.63% WAPE, no machine learning used | Seasonal Historical Average benchmark |
 | Are weekends/seasons real sales drivers? | Yes -- weekends add **+$79.60**/day, summer/holiday months add **+$29-38**/day | OLS regression, controlling for promotions |
 | Does weather matter? | No measurable effect, tested three separate ways | Confirmed null result |
 
