@@ -28,8 +28,8 @@ This repository is the analysis that answered it — and the recommendations tha
 | Do promotions just borrow from future sales? | No detectable dip in the 3 days after a promotion ends | Mean post-promo difference: +0.25%, not significant |
 | Does store location explain the volatility? | Barely. Variance nearly identical between stores (0.989 vs. 0.982) | Brown-Forsythe test |
 | Is a simple forecast good enough to start with? | 28.63% WAPE, no machine learning used | Seasonal Historical Average benchmark |
-| Are weekends/seasons real sales drivers? | Yes -- weekends add **+$79.60**/day, summer/holiday months add **+$29-38**/day | OLS regression, controlling for promotions |
-| Does weather matter? | No measurable effect, tested three separate ways | Confirmed null result |
+| Are weekends/seasons real sales drivers? | Yes --Weekends add +$79/day, and Summer adds +$30/day after controlling for promotions, price and category. | OLS regression, controlling for promotions |
+| Does weather matter? | No measurable weather effect across non-parametric tests and multivariable regression. | Confirmed null result |
 
 <img width="1266" height="152" alt="image" src="https://github.com/user-attachments/assets/c0fedd5c-0862-4625-b0ac-b0a2bfdb8bce" />
 
