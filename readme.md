@@ -13,7 +13,7 @@ This repository is the analysis that answered it — and the recommendations tha
 - **Headline result:** Promotions lift sales by **47% on average** versus a seasonality-adjusted baseline — with no sales dip in the 3 days after a promotion ends.
 - **Forecasting benchmark:** A transparent, non-ML baseline reproduces actual sales within **28.34% WAPE** — before any advanced modeling is considered.
 - **What changed as a result:** 3 targeted pilots — not a platform purchase, not a headcount request, not a 6-month roadmap.
-- **What this analysis refused to claim: ROI, causal promotion effects, and any conclusion beyond these two specific stores — see "Limitations" below for why.
+- **What this analysis refused to claim:**  ROI, causal promotion effects, and any conclusion beyond these two specific stores — see "Limitations" below for why.
 
 **Read next:** [Executive Summary](report/executive_summary.md) - [Full Report](report/full_report_v1.0.docx) - [Notebook 01 - Data Audit](notebooks/01_data_audit.ipynb)
 
