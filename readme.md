@@ -61,7 +61,7 @@ GitHub's file size limit prevents the full Excel file from being stored directly
 📁 Full Dataset:
 https://drive.google.com/file/d/1R7R_FUS5ylvMjr03TPsLGDdvBhM9-0-i/view?usp=sharing
 
-Each notebook runs end to end against the underlying dataset -- nothing in this repository is a static write-up of numbers that can't be reproduced.
+All analyses and reported results in this repository are reproducible using the complete dataset linked above.
 
 ## How the Analysis Was Built
 
