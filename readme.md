@@ -18,6 +18,11 @@ This repository is the analysis that answered it — and the recommendations tha
 **Read next:** [Executive Summary](report/executive_summary.md) - [Full Report](report/full_report_v1.0.docx) - [Notebook 01 - Data Audit](notebooks/01_data_audit.ipynb)
 
 ---
+<img width="978" height="725" alt="image" src="https://github.com/user-attachments/assets/8154a4b5-92c6-495b-966f-d7f030dfe1f9" />
+
+**Caption:** promotion-day sales sit visibly higher across the boxplot than non-promotion-day sales.
+
+**Business interpretation:** promotion days show a median sales value of $369.61 versus $260.80 on non-promotion days, and a mean of $557.66 versus $406.13 (a $151.53 mean difference). The difference is not attributable to chance (Mann-Whitney p < 0.001). The rank-biserial effect size (-0.206) indicates a small-to-moderate effect. **H1 is supported**: promotions are associated with a genuine, measurable sales lift.
 
 
 ## Key Results
