@@ -10,10 +10,10 @@ This repository is the analysis that answered it — and the recommendations tha
 
 - **Problem:** Recurring stock-outs during peak demand, excess inventory during slow periods, planning done mostly on judgement.
 - **Approach:** Audit the data, test the patterns everyone assumed were true, build a simple forecasting benchmark, recommend only what the evidence supports.
-- **Headline result:** Promotions lift sales by **47% on average** versus a seasonality-adjusted baseline — with no sales dip in the 3 days after a promotion ends.
+- **Headline result:** Promotions lift sales by **$151.53 on average** versus non-promotion days — with no sales dip in the 3 days after a promotion ends.
 - **Forecasting benchmark:** A transparent, non-ML baseline reproduces actual sales within **28.63% WAPE** — before any advanced modeling is considered.
 - **What changed as a result:** 3 targeted pilots — not a platform purchase, not a headcount request, not a 6-month roadmap.
-- **What this analysis refused to claim:**  ROI, causal promotion effects, and any conclusion beyond these two specific stores — see "Limitations" below for why.
+- **What this analysis refused to claim:** ROI, causal promotion effects, and any conclusion beyond these two specific stores — see "Limitations" below for why.
 
 **Read next:** [Executive Summary](report/executive_summary.md) - [Full Report](report/full_report_v1.0.docx) - [Notebook 01 - Data Audit](notebooks/01_data_audit.ipynb)
 
@@ -24,12 +24,13 @@ This repository is the analysis that answered it — and the recommendations tha
 
 | Question | Result | Evidence |
 |---|---|---|
-| Do promotions actually lift sales? | **+47.43%** average lift vs. seasonality-adjusted baseline (n = 12,702 promo-days) | Wilcoxon signed-rank, p < 0.001 |
-| Do promotions just borrow from future sales? | No detectable dip in the 3 days after a promotion ends | Mean post-promo difference: +0.25%, not significant |
-| Does store location explain the volatility? | Barely. Variance nearly identical between stores (0.989 vs. 0.982) | Brown-Forsythe test |
+| Do promotions actually lift sales? | **+$151.53** average lift vs. non-promotion days (n = 12,702 promo-days vs. 139,757 non-promo-days) | Mann-Whitney U, p < 0.001 |
+| Do promotions just borrow from future sales? | No detectable dip in the 3 days after a promotion ends | Mean post-promo difference: $1.50, not significant (p = 0.4255) |
+| Does store location explain the volatility? | Barely, in practical terms. Volatility close between stores (CoV 0.1097 vs. 0.1147) | Brown-Forsythe test |
 | Is a simple forecast good enough to start with? | 28.63% WAPE, no machine learning used | Seasonal Historical Average benchmark |
-| Are weekends/seasons real sales drivers? | Yes --Weekends add +$79/day, and Summer adds +$30/day after controlling for promotions, price and category. | OLS regression, controlling for promotions |
-| Does weather matter? | No measurable weather effect across non-parametric tests and multivariable regression. | Confirmed null result |
+| Are weekends/seasons real sales drivers? | Yes -- Weekends add +$79.09/day, and Summer shows the highest seasonal sales ($442.77 vs. Spring's $399.14). | Mann-Whitney U (weekend); Kruskal-Wallis (season) |
+| Does weather matter? | No measurable weather effect across non-parametric tests. | Confirmed null result |
+
 
 <img width="1266" height="152" alt="image" src="https://github.com/user-attachments/assets/c0fedd5c-0862-4625-b0ac-b0a2bfdb8bce" />
 
@@ -37,7 +38,7 @@ This repository is the analysis that answered it — and the recommendations tha
 
 | Action | Confidence | What Happens Next |
 |---|---|---|
-| Focus S&OP attention on 3 specific SKU-store combinations | Moderate | Pilot underway |
+| Apply manual adjustment to promotion-day forecasts, where error is concentrated | Strong | Pilot underway |
 | Test a modest increase in promotion frequency | Moderate | Controlled pilot, margin tracked |
 | Run the forecast benchmark alongside current planning | Not yet provable it's better | Parallel test, not a replacement |
 
