@@ -18,7 +18,7 @@ This repository is the analysis that answered it — and the recommendations tha
 **Read next:** [Executive Summary](report/executive_summary.md) - [Full Report](report/full_report_v1.0.docx) - [Notebook 01 - Data Audit](notebooks/01_data_audit.ipynb)
 
 ---
-<img width="972" height="707" alt="image" src="https://github.com/user-attachments/assets/43fcebd9-8878-43af-ae3e-121a7eb9bfff" />
+
 
 ## Key Results
 
@@ -32,7 +32,6 @@ This repository is the analysis that answered it — and the recommendations tha
 | Does weather matter? | No measurable weather effect across non-parametric tests. | Confirmed null result |
 
 
-<img width="1266" height="152" alt="image" src="https://github.com/user-attachments/assets/c0fedd5c-0862-4625-b0ac-b0a2bfdb8bce" />
 
 ## Business Recommendations
 
