@@ -92,3 +92,70 @@ Weather exploration. Scatterplots of net sales against temperature and against r
 Correlation exploration. Among the numeric variables examined, units sold shows a strong positive correlation with net sales (a mechanical relationship, not an insight), while list price, discount percentage, and promotion status show weaker positive correlations. Temperature, rainfall, holiday status, and stock-out status all sit close to zero. No causal interpretation was drawn from any correlation at this stage — each correlation served only to shortlist a variable for formal testing.
 
 Candidate drivers and hypotheses. Based on this exploration, promotion status, weekend status, season, store, category, and price were identified as candidates for formal testing, while weather was identified as a candidate for a formal null-result test given its consistently flat relationship with sales. These candidates map directly to the six hypotheses (H1–H6) formally tested in Notebook 03, Section 7 of this report.
+
+## 7. Statistical Findings
+
+Notebook 03 is the sole statistical source of truth for this project. Six hypotheses were tested, each using one pre-specified primary method, with effect size and confidence level reported alongside every p-value so that statistical significance is never presented without a corresponding measure of practical magnitude.
+
+H1 — Do promotions increase sales? Supported.
+Promotion days show a mean net sales value of $557.66 versus $406.13 on non-promotion days (median $369.60 versus $260.80) — a mean difference of $151.53. A Mann-Whitney U test confirms this difference is not attributable to chance (p<0.001), with a rank-biserial effect size of -0.206, indicating a small-to-moderate effect. Promotions are associated with a genuine, measurable sales lift.
+
+H2 — Do sales fall immediately after promotions end? Not supported.
+For each promotion event, the average net sales across the three days immediately following was compared against that same SKU-store-month's normal (non-promotion, non-stock-out) baseline level. The average post-promotion sales figure ($377.63) was statistically indistinguishable from the baseline level ($376.13) — a difference of $1.50, tested via Mann-Whitney U (p=0.4255). No evidence of a post-promotion dip was found in this three-day window, which argues against a simple demand-shifting (pull-forward) explanation for the promotion lift identified in H1.
+
+H3 — Do weekend sales differ from weekday sales? Supported.
+Weekend sales average $475.17 versus $396.08 on weekdays (median $310.08 versus $256.77) — a mean difference of $79.09. A Mann-Whitney U test confirms this difference is not attributable to chance (p<0.001). Weekend is a real, standalone calendar effect.
+
+H4 — Does season affect sales? Supported, with one qualification.
+A Kruskal-Wallis test across the four seasons found a statistically detectable difference (H=206.59, p<0.001). Summer shows the highest average sales ($442.77) and Spring the lowest ($399.14), with Autumn ($413.82) and Winter ($419.25) in between. Dunn's post-hoc test (Bonferroni-corrected across six pairwise comparisons) found that Summer and Spring each differ significantly from every other season; the one pairing that does not reach significance is Autumn versus Winter. The seasonal effect is therefore supported, but specifically driven by Summer and Spring rather than by all four seasons being mutually distinct.
+
+H5 — Does weather affect sales? Not supported.
+Temperature (tested via Kruskal-Wallis across four quartile-based categories) showed no statistically detectable association with sales (p=0.325), with a negligible effect size (eta-squared ≈ 0.000003). Rainfall (tested via Mann-Whitney, dry versus rainy days) likewise showed no detectable association (p=0.665). This is stated narrowly, as no measurable effect found using these two weather measures on same-day data — not as a general claim that weather can never affect sales.
+
+H6 — Does sales volatility differ between stores? Supported statistically, modest in practice.
+Volatility was defined, as the single canonical measure for this comparison, as the coefficient of variation of daily total sales (net sales aggregated across all SKUs, per store, per day) — not transaction-level variance or any other alternative definition, following the reasoning documented in Decision Log entry D06. STORE0001 shows a coefficient of variation of 0.1097 and STORE0002 a coefficient of variation of 0.1147. A Brown-Forsythe test confirms these two daily-total-sales series have statistically different variances (p<0.001); however, given the large sample size underlying this test (1,095 daily observations per store), the practical size of the CoV gap itself is small. This finding should be communicated as "detectable but modest," not as evidence that the two stores behave very differently on a day-to-day basis. As with every store-level finding in this project, this result describes STORE0001 and STORE0002 specifically and does not generalize to store format, country, or channel more broadly.
+
+Summary of evidence:
+
+Hypothesis	Result	Evidence Strength
+H1 — Promotion effect	Supported	Strong
+H2 — Post-promotion dip	Not supported	Not Supported
+H3 — Weekend effect	Supported	Strong
+H4 — Seasonal effect	Supported (Summer/Spring specifically)	Strong (Summer, Spring); Weak (Autumn vs. Winter)
+H5 — Weather effect	Not supported	Not Supported
+H6 — Store volatility	Supported, statistically	Weak / Modest in practical terms
+
+## 8. Forecast Benchmark
+
+Notebook 04 addressed a single question: before investing in more advanced forecasting methods, does a simple, transparent baseline already provide useful planning accuracy? This notebook is the sole canonical source for every forecasting metric in this project.
+
+Method. The Seasonal Historical Average was selected deliberately as the simplest available benchmark: for a given SKU at a given store, the forecast for any calendar month is the average of that SKU's historical sales at that store in the same calendar month, computed only from non-promotion, non-stock-out days. Where a SKU-store combination had fewer than ten qualifying historical observations for a given month, the forecast fell back to a category-store-level average. This method requires no specialized software and can be recomputed and verified by a planner directly.
+
+Evaluation design. The benchmark was trained exclusively on 2021–2022 data (101,724 observations) and evaluated against the full 2023 year (50,735 observations) as a genuine out-of-sample test — no information from the test period informed the forecast in any way, matching the condition a planner actually faces when forecasting a future they cannot yet observe.
+
+Overall accuracy:
+
+Metric	Value
+MAE	$119.88
+RMSE	$207.21
+MAPE (excluding near-zero actuals)	54.18%
+WAPE	28.63%
+Bias (mean forecast error)	+$4.65
+
+WAPE is treated as the primary business metric, since MAPE becomes mathematically unstable on the small share of rows (0.286%) with near-zero actual sales, while WAPE aggregates total absolute error over total sales value and avoids that distortion. A WAPE of 28.63% indicates that, across a full year the benchmark never saw during its construction, total forecast error amounts to just over a quarter of total sales value. The overall bias of +$4.65 indicates a very slight tendency to under-forecast on average.
+
+Diagnostics by segment:
+
+Segment	WAPE	Notes
+STORE0001	28.53%	—
+STORE0002	28.82%	Store makes almost no difference to accuracy
+Dairy	27.78%	Best-performing category
+Snacks	29.20%	Worst-performing category, still close to the others
+Non-promotion days	27.31%	Bias -$11.09
+Promotion days	39.25%	Bias +$182.63 — the single largest, most concentrated source of error
+Non-holiday	28.65%	—
+Holiday	26.76%	Holidays do not reduce forecast accuracy
+
+Forecast error is concentrated almost entirely in promotion days, which is expected given the method's deliberate exclusion of promotional history from its calculation — the benchmark is not designed to anticipate a promotion, and this is the one segment where it should not be trusted without manual adjustment. Store, category, and holiday status each make little difference to accuracy.
+
+Should machine learning be considered now? Not on this evidence. The benchmark's error is concentrated in one identified, explainable segment (promotions) rather than spread unexplainably across the business. A targeted adjustment to this same simple benchmark — informed by the promotion-lift finding in H1 — is the evidence-supported next step; machine learning has not yet been shown to be necessary, and adopting it now would add cost, complexity, and reduced interpretability without a demonstrated gap that only it could close. Whether this benchmark is more or less accurate than current planner judgement remains unresolved — no historical record of planner forecast accuracy exists for that comparison, and this is stated in Notebook 04 as Insufficient Data rather than assumed in either direction.
