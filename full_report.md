@@ -1,5 +1,5 @@
 # Sales Volatility, Promotion Effectiveness & Forecasting Benchmark Review
-Full Analytical Report
+
 ## 1. Executive Summary
 
 Demand planning for this two-store FMCG retail operation has relied primarily on manual judgement, producing recurring stock-outs during peak demand periods and excess inventory during slower ones. This project examined three years of daily transaction data to determine whether the underlying sales patterns are predictable enough to justify a change in planning practice, before any investment in more sophisticated forecasting infrastructure.
