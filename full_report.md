@@ -146,15 +146,8 @@ WAPE is treated as the primary business metric, since MAPE becomes mathematicall
 
 Diagnostics by segment:
 
-Segment	WAPE	Notes
-STORE0001	28.53%	—
-STORE0002	28.82%	Store makes almost no difference to accuracy
-Dairy	27.78%	Best-performing category
-Snacks	29.20%	Worst-performing category, still close to the others
-Non-promotion days	27.31%	Bias -$11.09
-Promotion days	39.25%	Bias +$182.63 — the single largest, most concentrated source of error
-Non-holiday	28.65%	—
-Holiday	26.76%	Holidays do not reduce forecast accuracy
+<img width="983" height="477" alt="image" src="https://github.com/user-attachments/assets/27daa4dc-8a74-4472-abf7-d8f8d8942110" />
+
 
 Forecast error is concentrated almost entirely in promotion days, which is expected given the method's deliberate exclusion of promotional history from its calculation — the benchmark is not designed to anticipate a promotion, and this is the one segment where it should not be trusted without manual adjustment. Store, category, and holiday status each make little difference to accuracy.
 
