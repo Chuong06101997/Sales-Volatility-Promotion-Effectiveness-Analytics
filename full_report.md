@@ -135,12 +135,8 @@ Evaluation design. The benchmark was trained exclusively on 2021–2022 data (10
 
 Overall accuracy:
 
-Metric	Value
-MAE	$119.88
-RMSE	$207.21
-MAPE (excluding near-zero actuals)	54.18%
-WAPE	28.63%
-Bias (mean forecast error)	+$4.65
+<img width="921" height="335" alt="image" src="https://github.com/user-attachments/assets/f0df1c11-42f8-47c5-8c2f-a41935ca795a" />
+
 
 WAPE is treated as the primary business metric, since MAPE becomes mathematically unstable on the small share of rows (0.286%) with near-zero actual sales, while WAPE aggregates total absolute error over total sales value and avoids that distortion. A WAPE of 28.63% indicates that, across a full year the benchmark never saw during its construction, total forecast error amounts to just over a quarter of total sales value. The overall bias of +$4.65 indicates a very slight tendency to under-forecast on average.
 
