@@ -117,13 +117,8 @@ Volatility was defined, as the single canonical measure for this comparison, as 
 
 Summary of evidence:
 
-Hypothesis	Result	Evidence Strength
-H1 — Promotion effect	Supported	Strong
-H2 — Post-promotion dip	Not supported	Not Supported
-H3 — Weekend effect	Supported	Strong
-H4 — Seasonal effect	Supported (Summer/Spring specifically)	Strong (Summer, Spring); Weak (Autumn vs. Winter)
-H5 — Weather effect	Not supported	Not Supported
-H6 — Store volatility	Supported, statistically	Weak / Modest in practical terms
+<img width="946" height="473" alt="image" src="https://github.com/user-attachments/assets/e8160fb4-f715-4e5d-ba6a-98dfe4829f62" />
+
 
 ## 8. Forecast Benchmark
 
