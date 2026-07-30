@@ -40,9 +40,8 @@ The dataset comprises 152,460 daily transaction records spanning January 1, 2021
 
 Structural composition:
 
-Store	Country	City	Channel	Transactions	Unique Products	Total Net Sales
-STORE0001	Germany	Berlin	Hypermarket	87,600	80	$41,939,805.83
-STORE0002	Italy	Rome	Supermarket	64,860	60	$21,903,478.75
+<img width="918" height="197" alt="image" src="https://github.com/user-attachments/assets/4a520fdc-af0e-4cee-bf81-6b391ed71a28" />
+
 
 Data quality, established in Notebook 01:
 
