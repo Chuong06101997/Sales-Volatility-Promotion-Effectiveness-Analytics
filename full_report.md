@@ -142,7 +142,7 @@ Diagnostics by segment:
 Forecast error is concentrated almost entirely in promotion days, which is expected given the method's deliberate exclusion of promotional history from its calculation — the benchmark is not designed to anticipate a promotion, and this is the one segment where it should not be trusted without manual adjustment. Store, category, and holiday status each make little difference to accuracy.
 
 Should machine learning be considered now? Not on this evidence. The benchmark's error is concentrated in one identified, explainable segment (promotions) rather than spread unexplainably across the business. A targeted adjustment to this same simple benchmark — informed by the promotion-lift finding in H1 — is the evidence-supported next step; machine learning has not yet been shown to be necessary, and adopting it now would add cost, complexity, and reduced interpretability without a demonstrated gap that only it could close. Whether this benchmark is more or less accurate than current planner judgement remains unresolved — no historical record of planner forecast accuracy exists for that comparison, and this is stated in Notebook 04 as Insufficient Data rather than assumed in either direction.
-9. Business Recommendations
+## 9. Business Recommendations
 
 Notebook 05 converts the evidence established in Notebooks 03 and 04 into business decisions. It introduces no new statistical test, no new forecasting metric, and no recommendation stronger than its supporting evidence.
 
@@ -160,7 +160,7 @@ Recommendations explicitly not supported, and why:
 
 Business impact, stated qualitatively. The recommendations above improve planning focus (calendar-aware buffer planning around weekends and Summer/Spring), promotion decision quality (moving from assumption to a tested lift-and-no-dip pattern), and forecast transparency (a benchmark planners can verify by hand). No return-on-investment figure, cost saving, or revenue impact is estimated anywhere in this report: Notebooks 01 through 04 confirm no holding-cost, capital-cost, or promotion-spend data exists in the source dataset, and inventing such a figure would exceed what any notebook in this project established.
 
-10. Governance and Analytical Traceability
+## 10. Governance and Analytical Traceability
 
 This project maintains three governance documents alongside the analytical notebooks, each answering a distinct question a reviewer might ask.
 
@@ -187,7 +187,7 @@ Seasonality assumed stable across three years. Both the H4 seasonal test and the
 
 Each of these limitations directly shaped which recommendations appear in Section 9 and which were explicitly withheld — they are constraints that bounded the analysis as it was conducted, not caveats appended afterward.
 
-12. Future Work
+## 12. Future Work
 
 The following analytical steps are identified as natural extensions of this project, distinct from the recommendations in Section 9, which are business actions rather than further analysis:
 
@@ -200,7 +200,7 @@ Re-validation of the promotion and seasonal findings should promotion mechanics 
 
 None of these represent a deficiency in the current analysis — each is a next step that depends on data or process changes outside this project's original scope.
 
-13. Conclusion
+## 13. Conclusion
 
 This project set out to determine whether a two-store FMCG retail operation's sales patterns were predictable enough, and its promotion activity effective enough, to justify a change in demand-planning practice — before any investment in more advanced forecasting. The evidence produced a measured answer rather than either a confirmation or a rejection of the business's prior assumptions.
 
